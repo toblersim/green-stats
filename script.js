@@ -1,4 +1,5 @@
-const names = ["Alice", "Bob", "Charlie"];
+import { names } from './data/names.js';
+
 const dropdown = document.getElementById('nameDropdown');
 names.forEach(name => {
     const option = document.createElement('option');
