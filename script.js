@@ -1,4 +1,4 @@
-const csvFilePath = '../data/names.csv';
+const csvFilePath = 'data/names.csv';
 const dropdown = document.getElementById('nameDropdown');
 
 fetch(csvFilePath)
