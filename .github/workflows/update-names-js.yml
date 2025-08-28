@@ -1,0 +1,27 @@
+name: Update names JS
+
+on:
+  push:
+    paths:
+      - 'data/names.csv'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate script.js from names.csv
+        run: node generate-names-js.js
+
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Update script.js from names.csv
+          file_pattern: script.js
